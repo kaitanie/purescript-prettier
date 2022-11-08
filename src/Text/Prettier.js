@@ -1,4 +1,4 @@
-var prettier = require('prettier')
+import prettier from 'prettier';
 
 function getOptions(fromTrailingComma, fromRange, fromParser, options) {
   options = Object.assign({}, options)
@@ -8,9 +8,9 @@ function getOptions(fromTrailingComma, fromRange, fromParser, options) {
   return options
 }
 
-exports.infinity = Infinity
+export {Infinity as infinity};
 
-exports.formatImpl = function(fromTrailingComma) {
+export function formatImpl(fromTrailingComma) {
   return function(fromRange) {
     return function(fromParser) {
       return function(options) {
@@ -22,7 +22,7 @@ exports.formatImpl = function(fromTrailingComma) {
   }
 }
 
-exports.checkImpl = function(fromTrailingComma) {
+export function checkImpl(fromTrailingComma) {
   return function(fromRange) {
     return function(fromParser) {
       return function(options) {
@@ -34,7 +34,7 @@ exports.checkImpl = function(fromTrailingComma) {
   }
 }
 
-exports.formatWithCursorImpl = function(fromTrailingComma) {
+export function formatWithCursorImpl(fromTrailingComma) {
   return function(fromRange) {
     return function(fromParser) {
       return function(options) {
